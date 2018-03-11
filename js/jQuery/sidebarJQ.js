@@ -1,7 +1,7 @@
 $(document).ready(function(){
-  $('#sidebar-toggle').click(function(){
-    $(this).toggleClass('open');
+  $('#sidebar-toggle-wrapper').click(function(){
+    $('#sidebar-toggle').toggleClass('open');
     $('#sidebar').toggleClass('open');
-    $('#sidebar-toggle-wrapper').toggleClass('open');
+    $(this).toggleClass('open');
   });
 });

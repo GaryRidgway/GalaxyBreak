@@ -1,4 +1,5 @@
 #sidebar {
+  z-index: 2;
   position: fixed;
   width: 240px;
   height: 100%;
@@ -29,6 +30,7 @@
   position: absolute;
   top: 20px;
   left: calc(100% + 20px);
+  cursor: pointer;
 }
 
 /* Icon 1 */
@@ -46,7 +48,6 @@
   -moz-transition: .5s ease-in-out;
   -o-transition: .5s ease-in-out;
   transition: .5s ease-in-out;
-  cursor: pointer;
 }
 
 #sidebar-toggle span {

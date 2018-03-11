@@ -15,4 +15,6 @@ body {
   position: relative;
   margin: 0;
   background-color: #3c3c3c;
+  width: 2500px;
+  height: 2000px;
 }
