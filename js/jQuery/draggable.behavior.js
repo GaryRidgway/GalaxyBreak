@@ -58,7 +58,6 @@ function dragElement(elmnt) {
     let nChildren = JQE.find('.node');
     nChildren.each(function() {
       // Update the child's position.
-      console.log([$(this).offset().top, $(this).offset().left]);
       $(this).attr({
         y : $(this).offset().top,
         x : $(this).offset().left
