@@ -1,5 +1,6 @@
 function dragElement(elmnt) {
 
+  JQE = $('#' + elmnt.id);
   var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
   if (document.getElementById(elmnt.id)) {
     /* if present, the header is where you move the DIV from:*/
@@ -8,6 +9,12 @@ function dragElement(elmnt) {
     /* otherwise, move the DIV from anywhere inside the DIV:*/
     elmnt.onmousedown = dragMouseDown;
   }
+
+  JQE.attr({
+      y : (currentMousePos.y),
+      x : (currentMousePos.x)
+    });
+
 
   function dragMouseDown(e) {
     e = e || window.event;
@@ -26,6 +33,13 @@ function dragElement(elmnt) {
     pos2 = pos4 - e.clientY;
     pos3 = e.clientX;
     pos4 = e.clientY;
+
+    // Map attributes for usage in computations.
+    JQE.attr({
+      y : (elmnt.offsetTop - pos2),
+      x : (elmnt.offsetLeft - pos1)
+    });
+
     // set the element's new position:
     elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
     elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";

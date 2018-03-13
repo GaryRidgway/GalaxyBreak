@@ -4,6 +4,7 @@
   --node-size: 15px;
 
   /* Colors */
+  --base-white: #f5f5f5;
   --sb-color: #02a2eb;
 
   /* Material Shadows */
@@ -20,4 +21,6 @@ body {
   background-color: #3c3c3c;
   width: 2500px;
   height: 2000px;
+  font-family: Roboto, Arial;
+  color: var(--base-white);
 }

@@ -4,4 +4,9 @@ $(document).ready(function(){
     $('#sidebar').toggleClass('open');
     $(this).toggleClass('open');
   });
+
+  $('#delete').click(function(){
+    $('.selected').remove();
+    targets = ['body'];
+  });
 });
