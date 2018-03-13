@@ -4,4 +4,8 @@ $(document).ready( function() {
     $(document).width()/2,
     0
  );
+
+  $(function(){
+      $("#includes").load("includes.html");
+    });
 });
