@@ -4,7 +4,8 @@
  * linesvg2 is the child of div2,
  * and div2 is the child of div1.
  *
- * You must pass jQuery selectors.
+ * You must pass the string id's that
+ * will be used to create jQuery selectors.
  */
 
 function div_lines(div1, div2, line2) {
@@ -13,7 +14,6 @@ function div_lines(div1, div2, line2) {
   let odiv2 = $(div2);
   let svg = $(line2);
   let line = $(line2).find('line');
-  console.log(odiv1, odiv2);
 
   let pos1 = odiv1.offset();
   let pos2 = odiv2.offset();
@@ -22,7 +22,6 @@ function div_lines(div1, div2, line2) {
   let svgWidth = pos1.left-pos2.left;
   let absSvgHeight = Math.abs(svgHeight);
   let absSvgWidth = Math.abs(svgWidth);
-  console.log(svgHeight, svgWidth);
 
   // Set the proper placement for the svg canvas.
   svg.css({
@@ -42,14 +41,12 @@ function div_lines(div1, div2, line2) {
 
   // Set the proper placement for the line.
   if ((svgWidth > 0 && svgHeight > 0) || (svgWidth < 0 && svgHeight < 0)) {
-    console.log('tl, br');
     line
       .attr('y1', 0)
       .attr('x1', 0)
       .attr('y2', absSvgHeight)
       .attr('x2', absSvgWidth);
   } else {
-    console.log('tr, bl');
     line
       .attr('y1', 0)
       .attr('x1', absSvgWidth)
