@@ -17,6 +17,19 @@ $(document).ready(function(){
     });
     sel.remove();
     targets = ['body'];
+  });
 
+  $('#delete-and-raise').click(function(){
+    let sel = $('#' + $('.selected').attr('id'));
+    let pos = sel.offset();
+    let subTree = sel.detach();
+    $('#' + sel.attr('line-target')).remove();
+    subTree.appendTo('body');
+    sel.css({
+      'top' : pos.top,
+      'left' : pos.left
+    });
+    calc_all_lines('#' + sel.attr('id'));
+    // dragElement(document.getElementById(sel.attr('id')));
   });
 });

@@ -11,10 +11,6 @@ function addNode(parents) {
     let cNode = $('#node-'.concat(NID))
     let nodeSize = $(':root').css('--node-size').replace(/[^-\d\.]/g, '');
     if(cNode.parent().hasClass('node')) {
-      // console.log(cNode.parent().attr('id'));
-      // console.log(['mouse pos', 'parent pos', ' offset']);
-      // console.log([currentMousePos.x, cNode.parent().attr('x'), currentMousePos.x - cNode.parent().attr('x')]);
-      // console.log([currentMousePos.y, cNode.parent().attr('y'), currentMousePos.y - cNode.parent().attr('y')]);
       cNode.css({
         // Position it on the mouse.
         'left':''.concat(currentMousePos.x - cNode.parent().attr('x')),
@@ -40,7 +36,8 @@ function addNode(parents) {
     });
 
     // Allow it to be draggable.
-    dragElement(document.getElementById('node-'.concat(NID)));
+    $(cNode).data( "draggable", new dragElement(document.getElementById('node-'.concat(NID))));
+    // console.log($(cNode).data( "draggable"));
 
   }
 
