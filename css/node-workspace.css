@@ -22,3 +22,27 @@ body>.node {
 .node.selected {
   background-color: #00c5ae;
 }
+
+.textbox-positioner {
+  width: 10px;
+  position: relative;
+  top: calc(var(--node-size) + 2px);
+  left: 50%;
+
+}
+
+.textbox-bg {
+  position: relative;
+  left: -50%;
+  filter: blur(5px);
+}
+
+.node-input {
+  position: relative;
+  width: 10px;
+  text-align: center;
+  left: -50%;
+  border: none;
+  background-color: transparent;
+  color: var(--non-menu-white);
+}
