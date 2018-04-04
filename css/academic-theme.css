@@ -1,0 +1,30 @@
+/* Tackboard styles*/
+.academic-theme {
+  background-color: var(--academic-background);
+}
+
+/* Node and Textbox styles */
+.academic-theme .textbox-positioner {
+  top: 0%;
+}
+
+.academic-theme .textbox-positioner input{
+  color: var(--academic-text-color);
+}
+
+.academic-theme .node {
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.academic-theme .line-circle-top, .academic-theme .line-circle-bottom {
+  height: calc(var(--node-size) / 5);
+}
+
+/* Lines styles */
+.academic-theme svg.line {
+  stroke: #000;
+  stroke-width: calc(var(--node-size) / 5);
+}
+
+
