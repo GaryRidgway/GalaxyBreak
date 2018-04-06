@@ -121,6 +121,11 @@
   transform: rotate(-135deg);
 }
 
-#delete, #delete-and-raise, #swap-theme {
+#delete, #delete-and-raise, #swap-theme, #toggle-presentation-mode {
   cursor: pointer;
+}
+
+/* Behavior and styles for specific buttons */
+#toggle-presentation-mode {
+  visibility: hidden;
 }

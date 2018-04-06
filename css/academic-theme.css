@@ -35,4 +35,7 @@
   stroke-width: calc(var(--node-size) / 5);
 }
 
-
+/* Show things pertinent to only academic theme */
+.academic-theme #toggle-presentation-mode{
+  visibility: visible;
+}
