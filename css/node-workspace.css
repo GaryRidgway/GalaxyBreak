@@ -20,11 +20,11 @@ body>.node {
 }
 
 .node.selected {
-  background-color: #00c5ae;
+  background-color: var(--node-selected-color);
 }
 
 .textbox-positioner {
-  width: 10px;
+  width: 70px;
   position: relative;
   top: calc(var(--node-size) + 2px);
   left: 50%;
@@ -32,12 +32,16 @@ body>.node {
 }
 
 .textbox-bg {
+  width: 70px;
   position: relative;
   left: -50%;
-  filter: blur(5px);
+  background-color: var(--textbox-background);
+  border-radius: 3px;
 }
 
 .node-input {
+  width: 70px;
+  padding: 0;
   position: relative;
   width: 10px;
   text-align: center;

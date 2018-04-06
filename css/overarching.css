@@ -7,6 +7,10 @@
   --base-white: #f5f5f5;
   --non-menu-white: #f5f5f5;
   --sb-color: #02a2eb;
+  --node-selected-color: #00c5ae;
+  --textbox-background: rgba(43,43,43, 0.7);
+  --academic-textbox-background: rgba(43,43,43, 0.2);
+  --academic-textbox-selected-background: rgb(0,197,174, 0.4);
 
   /* Material Shadows */
   --m-s-1: 0 1px  3px  rgba(0,0,0,0.12), 0 1px  2px  rgba(0,0,0,0.24);
@@ -18,6 +22,7 @@
   /* Academic theme variables*/
   --academic-background: #fff;
   --academic-text-color: #000;
+
 }
 
 body {
