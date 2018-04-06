@@ -12,7 +12,9 @@ function add_svg_line(node) {
   parent.attr('line-target', 'svg-line-' + nodeNum);
   $('#node-workspace').append(''.concat(
     "<svg id='svg-line-",nodeNum,"' class='line'>\
-      <line id='line-",nodeNum,"'>\
-    </line></svg>"
+      <line id='line-",nodeNum,"'></line>\
+      <circle id='line-circle-top-",nodeNum,"' class='line-circle-top'></circle>\
+      <circle id='line-circle-bottom-",nodeNum,"' class='line-circle-bottom'></circle>\
+    </svg>"
   ));
 }

@@ -1,7 +1,12 @@
 .line {
   position: absolute;
   stroke: #f5f5f5;
-  stroke-width: 6px;
+  stroke-width: calc(var(--node-size) / 2.5);
+}
+
+.line-circle-top, .line-circle-bottom  {
+  position: absolute;
+  height: calc(var(--node-size) / 2.5);
 }
 
 .line>line {
