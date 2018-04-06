@@ -19,6 +19,10 @@ Go and try it out for yourself!
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
+## Estimated work time
+
+44 hours
+
 ## Acknowledgments
 
 * My friend Nathan for having a need that I could fill to make his life easier.
