@@ -50,6 +50,7 @@ function addNode(parents) {
 
     cNodeTextBoxInputBG.css('height', cNodeTextBox.height());
     cNodeTextBoxInput.css('top', '-' + (cNodeTextBox.height()/2));
+    cNodeTextBoxInput.css('width', 70);
     cNodeTextBoxInput.on("change paste keyup", function() {
       let cNodeTextWidth = $.fn.textWidth(cNodeTextBoxInput.val(), 'Roboto');
       cNodeTextBox.css('width', cNodeTextWidth+10);
@@ -83,5 +84,9 @@ $.fn.textWidth = function(text, font, minWidth = 0) {
   let modifier = ((1.44897 * charsCount) + 0.55102) * 2;
   let correctedWidth = (computedWidth + spacesWidth) - modifier + 10;
 
-  return correctedWidth;
+  if (correctedWidth < 60) {
+    return 60;
+  } else {
+    return correctedWidth;
+  }
 };

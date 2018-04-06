@@ -18,7 +18,11 @@
 }
 
 .academic-theme .node.selected>div>.textbox-bg {
-  background-color: var(--textbox-selected-background);
+  background-color: var(--academic-textbox-selected-background);
+}
+
+.academic-theme .node>div>.textbox-bg {
+  background-color: var(--academic-textbox-background);
 }
 
 .academic-theme .line-circle-top, .academic-theme .line-circle-bottom {
