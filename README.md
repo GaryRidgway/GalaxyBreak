@@ -14,6 +14,7 @@ Go and try it out for yourself!
 ## Authors
 
 * **Gary Alan Ridgway** - *Lead Designer* - [GaryRidgway](https://github.com/GaryRidgway)
+* **Nathan DePuy** - *Primary Feature Consultant*
 
 ## License
 
