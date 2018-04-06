@@ -55,11 +55,6 @@ function addNode(parents) {
       cNodeTextBox.css('width', cNodeTextWidth+10);
       cNodeTextBoxInputBG.css('width', cNodeTextWidth+10);
       cNodeTextBoxInput.css('width', cNodeTextWidth+10);
-      if(cNodeTextBoxInput.val() != '') {
-        cNodeTextBoxInputBG.css('background-color', 'rgba(43,43,43, 0.8)');
-      } else {
-        cNodeTextBoxInputBG.css('background-color', 'transparent');
-      }
     });
     cNodeTextBoxInput.keyup(function() {
       let cNodeTextWidth = $.fn.textWidth(cNodeTextBoxInput.val(), 'Roboto');
@@ -67,7 +62,6 @@ function addNode(parents) {
       cNodeTextBoxInputBG.css('width', cNodeTextWidth+10);
       cNodeTextBoxInput.css('width', cNodeTextWidth+10);
     });
-
   }
 
   // THIS SHOULD ALWAYS BE LAST.
@@ -75,8 +69,24 @@ function addNode(parents) {
 }
 
 
-$.fn.textWidth = function(text, font) {
-  if (!$.fn.textWidth.fakeEl) $.fn.textWidth.fakeEl = $('<span>').hide().appendTo(document.body);
+$.fn.textWidth = function(text, font, minWidth = 0) {
+  let spaceCount = (text.split(" ").length - 1);
+  let charsCount = text.length - spaceCount;
+
+  if (!$.fn.textWidth.fakeEl) {
+    $.fn.textWidth.fakeEl = $('<span>').hide().appendTo(document.body);
+  }
   $.fn.textWidth.fakeEl.text(text || this.val() || this.text()).css('font', font || this.css('font'));
-  return $.fn.textWidth.fakeEl.width();
+
+  let computedWidth = $.fn.textWidth.fakeEl.width();
+  console.log(computedWidth);
+  let spacesWidth = 4 * spaceCount;
+  console.log(spacesWidth);
+  let modifier = ((1.44897 * charsCount) + 0.55102) * 2;
+  console.log(modifier);
+  let correctedWidth = (computedWidth + spacesWidth) - modifier + 10;
+  console.log(correctedWidth);
+  console.log('--------------------');
+
+  return correctedWidth;
 };

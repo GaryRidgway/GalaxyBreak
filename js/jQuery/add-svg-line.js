@@ -13,8 +13,8 @@ function add_svg_line(node) {
   $('#node-workspace').append(''.concat(
     "<svg id='svg-line-",nodeNum,"' class='line'>\
       <line id='line-",nodeNum,"'></line>\
-      <circle id='line-circle-top-",nodeNum,"' class='line-circle-top'></circle>\
-      <circle id='line-circle-bottom-",nodeNum,"' class='line-circle-bottom'></circle>\
+      <circle id='line-circle-top-",nodeNum,"' class='line-circle-top' stroke='black' fill='black'></circle>\
+      <circle id='line-circle-bottom-",nodeNum,"' class='line-circle-bottom' stroke='black' fill='black'></circle>\
     </svg>"
   ));
 }
