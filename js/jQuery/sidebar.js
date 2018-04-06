@@ -33,10 +33,27 @@ $(document).ready(function(){
   });
 
   $('#swap-theme').click(function(){
+    let isAcademic = false;
     $('body').toggleClass('academic-theme');
     $('body').children('.node').each(function() {
-      console.log('#' + $(this).attr('id'));
       calc_all_lines('#' + $(this).attr('id'));
     });
+    isAcademic = $('body').hasClass('academic-theme');
+    if (isAcademic) {
+      console.log(wasPresentationMode + '--1');
+      if (wasPresentationMode) {
+        console.log(wasPresentationMode + '--2');
+        $('body').addClass('presentation-mode')
+        console.log(wasPresentationMode + '--3');
+      }
+    } else {
+      $('body').removeClass('presentation-mode')
+    }
+  });
+
+  let wasPresentationMode = false;
+  $('#toggle-presentation-mode').click(function(){
+    $('body').toggleClass('presentation-mode');
+    wasPresentationMode = $('body').hasClass('presentation-mode');
   });
 });

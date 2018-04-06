@@ -14,10 +14,15 @@ Go and try it out for yourself!
 ## Authors
 
 * **Gary Alan Ridgway** - *Lead Designer* - [GaryRidgway](https://github.com/GaryRidgway)
+* **Nathan DePuy** - *Primary Feature Consultant*
 
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+
+## Estimated work time
+
+44 hours
 
 ## Acknowledgments
 
