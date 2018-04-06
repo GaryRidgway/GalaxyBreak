@@ -121,6 +121,6 @@
   transform: rotate(-135deg);
 }
 
-#delete {
+#delete, #delete-and-raise, #swap-theme {
   cursor: pointer;
 }

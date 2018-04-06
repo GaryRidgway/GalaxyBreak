@@ -30,6 +30,13 @@ $(document).ready(function(){
       'left' : pos.left
     });
     calc_all_lines('#' + sel.attr('id'));
-    // dragElement(document.getElementById(sel.attr('id')));
+  });
+
+  $('#swap-theme').click(function(){
+    $('body').toggleClass('academic-theme');
+    $('body').children('.node').each(function() {
+      console.log('#' + $(this).attr('id'));
+      calc_all_lines('#' + $(this).attr('id'));
+    });
   });
 });

@@ -79,14 +79,9 @@ $.fn.textWidth = function(text, font, minWidth = 0) {
   $.fn.textWidth.fakeEl.text(text || this.val() || this.text()).css('font', font || this.css('font'));
 
   let computedWidth = $.fn.textWidth.fakeEl.width();
-  console.log(computedWidth);
   let spacesWidth = 4 * spaceCount;
-  console.log(spacesWidth);
   let modifier = ((1.44897 * charsCount) + 0.55102) * 2;
-  console.log(modifier);
   let correctedWidth = (computedWidth + spacesWidth) - modifier + 10;
-  console.log(correctedWidth);
-  console.log('--------------------');
 
   return correctedWidth;
 };

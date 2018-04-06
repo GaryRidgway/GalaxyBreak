@@ -10,8 +10,11 @@
 
 function div_lines(div1, div2, line2) {
   // this should be set to 10 if academic style is on.
-  var w1 = 10;
-  var w2 =2 * w1;
+  var w1 = 0;
+  if ($('body').hasClass('academic-theme')) { w1 = 10;}
+  var w2 = 2 * w1;
+
+
   if (
       div1.replace('#','') !== 'undefined' &&
       div2.replace('#','') !== 'undefined' &&
