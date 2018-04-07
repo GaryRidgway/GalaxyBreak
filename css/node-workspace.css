@@ -24,26 +24,42 @@ body>.node {
 }
 
 .textbox-positioner {
+  pointer-events: none;
+  visibility: none;
   width: 70px;
   position: relative;
   top: calc(var(--node-size) + 2px);
   left: 50%;
+  user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none;
 
 }
 
 .textbox-bg {
+  pointer-events: none;
   width: 70px;
   position: relative;
   left: -50%;
   background-color: var(--textbox-background);
   border-radius: 3px;
+  user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -o-user-select: none;
 }
 
 .node-input {
+  pointer-events: auto;
+  resize: none;
+  overflow:hidden;
   width: 70px;
+  height:16px;
   padding: 0;
   position: relative;
-  width: 10px;
   text-align: center;
   left: -50%;
   border: none;

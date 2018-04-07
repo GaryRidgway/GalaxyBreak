@@ -1,7 +1,8 @@
 $(document).ready( function() {
   // Scroll to center of page horizontally.
-  window.scrollTo(
-    $(document).width()/2,
-    0
- );
+  $(window).on('beforeunload', function() {
+    $(window).scrollLeft(
+      ($(document).width() - $(window).width())/2
+    );
+  });
 });

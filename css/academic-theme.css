@@ -8,7 +8,7 @@
   top: 0%;
 }
 
-.academic-theme .textbox-positioner input{
+.academic-theme .textbox-positioner textarea{
   color: var(--academic-text-color);
 }
 
@@ -25,13 +25,10 @@
   background-color: var(--academic-textbox-background);
 }
 
-.academic-theme .line-circle-top, .academic-theme .line-circle-bottom {
-  height: calc(var(--node-size) / 5);
-}
-
 /* Lines styles */
 .academic-theme svg.line {
   stroke: #000;
+  fill: #000;
   stroke-width: calc(var(--node-size) / 5);
 }
 

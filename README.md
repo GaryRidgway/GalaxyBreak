@@ -10,6 +10,7 @@ Go and try it out for yourself!
 ## Built With
 
 * [jQuery](https://jquery.com/)
+* [jQuery.Hotkeys](https://github.com/jeresig/jquery.hotkeys)
 
 ## Authors
 
@@ -22,7 +23,7 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Estimated work time
 
-44 hours
+48.5 hours
 
 ## Acknowledgments
 
