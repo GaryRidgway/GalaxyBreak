@@ -25,10 +25,6 @@
   background-color: var(--academic-textbox-background);
 }
 
-.academic-theme .line-circle-top, .academic-theme .line-circle-bottom {
-  height: calc(var(--node-size) / 5);
-}
-
 /* Lines styles */
 .academic-theme svg.line {
   stroke: #000;
