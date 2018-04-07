@@ -23,7 +23,7 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Estimated work time
 
-46.5 hours
+48.5 hours
 
 ## Acknowledgments
 
