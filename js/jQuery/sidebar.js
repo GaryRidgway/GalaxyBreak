@@ -40,11 +40,8 @@ $(document).ready(function(){
     });
     isAcademic = $('body').hasClass('academic-theme');
     if (isAcademic) {
-      console.log(wasPresentationMode + '--1');
       if (wasPresentationMode) {
-        console.log(wasPresentationMode + '--2');
         $('body').addClass('presentation-mode')
-        console.log(wasPresentationMode + '--3');
       }
     } else {
       $('body').removeClass('presentation-mode')

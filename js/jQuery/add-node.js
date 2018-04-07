@@ -7,7 +7,7 @@ function addNode(parents) {
       "<div id='node-",NID,"' class='node'>\
         <div class='textbox-positioner'id='textbox-positioner-",NID,"'>\
           <div id='textbox-bg-",NID,"' class='textbox-bg'></div>\
-          <input type='text' class='node-input' id='node-input-",NID,"'>\
+          <textarea wrap='off' type='text' class='node-input' id='node-input-",NID,"'></textarea>\
         </div>\
       </div>"
     ));
@@ -41,7 +41,6 @@ function addNode(parents) {
 
     // Allow it to be draggable.
     $(cNode).data( "draggable", new dragElement(document.getElementById('node-'.concat(NID))));
-    // console.log($(cNode).data( "draggable"));
 
     // Size the text boxes.
     let cNodeTextBox = cNode.find('.textbox-positioner');
@@ -51,42 +50,31 @@ function addNode(parents) {
     cNodeTextBoxInputBG.css('height', cNodeTextBox.height());
     cNodeTextBoxInput.css('top', '-' + (cNodeTextBox.height()/2));
     cNodeTextBoxInput.css('width', 70);
-    cNodeTextBoxInput.on("change paste keyup", function() {
-      let cNodeTextWidth = $.fn.textWidth(cNodeTextBoxInput.val(), 'Roboto');
-      cNodeTextBox.css('width', cNodeTextWidth+10);
-      cNodeTextBoxInputBG.css('width', cNodeTextWidth+10);
-      cNodeTextBoxInput.css('width', cNodeTextWidth+10);
-    });
+
     cNodeTextBoxInput.keyup(function() {
-      let cNodeTextWidth = $.fn.textWidth(cNodeTextBoxInput.val(), 'Roboto');
-      cNodeTextBox.css('width', cNodeTextWidth+10);
-      cNodeTextBoxInputBG.css('width', cNodeTextWidth+10);
-      cNodeTextBoxInput.css('width', cNodeTextWidth+10);
+      let bWidth = Math.max(70,cNodeTextBoxInput[0].scrollWidth) + 'px';
+      let bHeight = Math.max(16,cNodeTextBoxInput[0].scrollHeight) + 'px';
+
+      cNodeTextBoxInput.css('width','0px');
+      cNodeTextBoxInput.css('height','0px');
+      cNodeTextBoxInput.css('width', bWidth);
+      cNodeTextBoxInput.css('height', bHeight);
+
+      cNodeTextBoxInputBG.css('width','0px');
+      cNodeTextBoxInputBG.css('height','0px');
+      cNodeTextBoxInputBG.css('width', bWidth);
+      cNodeTextBoxInputBG.css('height', bHeight);
+
+      cNodeTextBox.css('width','0px');
+      cNodeTextBox.css('height','0px');
+      cNodeTextBox.css('width', bWidth);
+      cNodeTextBox.css('height', bHeight);
+
+      cNodeTextBoxInput.css('top', '-' + (cNodeTextBox.height()));
+      calc_all_lines(cNode);
     });
   }
 
   // THIS SHOULD ALWAYS BE LAST.
   NID ++;
 }
-
-
-$.fn.textWidth = function(text, font, minWidth = 0) {
-  let spaceCount = (text.split(" ").length - 1);
-  let charsCount = text.length - spaceCount;
-
-  if (!$.fn.textWidth.fakeEl) {
-    $.fn.textWidth.fakeEl = $('<span>').hide().appendTo(document.body);
-  }
-  $.fn.textWidth.fakeEl.text(text || this.val() || this.text()).css('font', font || this.css('font'));
-
-  let computedWidth = $.fn.textWidth.fakeEl.width();
-  let spacesWidth = 4 * spaceCount;
-  let modifier = ((1.44897 * charsCount) + 0.55102) * 2;
-  let correctedWidth = (computedWidth + spacesWidth) - modifier + 10;
-
-  if (correctedWidth < 60) {
-    return 60;
-  } else {
-    return correctedWidth;
-  }
-};

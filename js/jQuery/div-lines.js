@@ -9,11 +9,14 @@
  */
 
 function div_lines(div1, div2, line2) {
-  // this should be set to 10 if academic style is on.
+  // this should be set to the height of the
+  // textbox if academic style is on.
   var w1 = 0;
-  if ($('body').hasClass('academic-theme')) { w1 = 10;}
-  var w2 = 2 * w1;
-
+  if ($('body').hasClass('academic-theme')) {
+    let tBox = $('#node-input-' + div1.split("-").pop());
+    w1 = parseInt(tBox.css('height'), 10) - 6;
+  }
+  var w2 =  w1 +10;
 
   if (
       div1.replace('#','') !== 'undefined' &&
