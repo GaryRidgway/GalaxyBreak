@@ -10,6 +10,7 @@ Go and try it out for yourself!
 ## Built With
 
 * [jQuery](https://jquery.com/)
+* [jQuery.Hotkeys](https://github.com/jeresig/jquery.hotkeys)
 
 ## Authors
 
