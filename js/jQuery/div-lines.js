@@ -12,11 +12,12 @@ function div_lines(div1, div2, line2) {
   // this should be set to the height of the
   // textbox if academic style is on.
   var w1 = 0;
+  var w2 = 0;
   if ($('body').hasClass('academic-theme')) {
     let tBox = $('#node-input-' + div1.split("-").pop());
     w1 = parseInt(tBox.css('height'), 10) - 6;
+    var w2 =  w1 +10;
   }
-  var w2 =  w1 +10;
 
   if (
       div1.replace('#','') !== 'undefined' &&
@@ -28,10 +29,6 @@ function div_lines(div1, div2, line2) {
     let odiv2 = $(div2);
     let svg = $(line2);
     let line = $(line2).find('line');
-    var topCircle = $('#line-circle-top-' + line2.split("-").pop());
-    topCircle.attr('r', 0.1);
-    var bottomCircle = $('#line-circle-bottom-' + line2.split("-").pop());
-    bottomCircle.attr('r', 0.1);
 
     let pos1 = odiv1.offset();
     let pos2 = odiv2.offset();
@@ -64,24 +61,12 @@ function div_lines(div1, div2, line2) {
         .attr('x1', 20)
         .attr('y2', absSvgHeight - 20)
         .attr('x2', absSvgWidth - 20);
-      topCircle
-        .attr('cy', 20)
-        .attr('cx', 20);
-      bottomCircle
-        .attr('cy', absSvgHeight - 20)
-        .attr('cx', absSvgWidth - 20);
     } else {
       line
         .attr('y1', 20)
         .attr('x1', absSvgWidth - 20)
         .attr('y2', absSvgHeight - 20)
         .attr('x2', 20);
-      topCircle
-        .attr('cy', 20)
-        .attr('cx', absSvgWidth - 20)
-      bottomCircle
-        .attr('cy', absSvgHeight - 20)
-        .attr('cx', 20);
     }
   }
 }

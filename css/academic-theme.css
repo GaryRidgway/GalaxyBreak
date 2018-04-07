@@ -32,6 +32,7 @@
 /* Lines styles */
 .academic-theme svg.line {
   stroke: #000;
+  fill: #000;
   stroke-width: calc(var(--node-size) / 5);
 }
 
