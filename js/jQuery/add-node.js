@@ -7,7 +7,7 @@ function addNode(parents) {
       "<div id='node-",NID,"' class='node'>\
         <div class='textbox-positioner'id='textbox-positioner-",NID,"'>\
           <div id='textbox-bg-",NID,"' class='textbox-bg'></div>\
-          <textarea wrap='off' type='text' class='node-input' id='node-input-",NID,"'></textarea>\
+          <textarea wrap='off' spellcheck='false' type='text' class='node-input' id='node-input-",NID,"'></textarea>\
         </div>\
       </div>"
     ));
