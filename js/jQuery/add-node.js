@@ -56,16 +56,17 @@ function addNode(parents) {
       let bHeight = Math.max(16,cNodeTextBoxInput[0].scrollHeight) + 'px';
 
       cNodeTextBoxInput.css({'width':'0px', 'height':'0px'});
-      cNodeTextBoxInput.css({'width':bWidth, 'height':bHeight});
-
       cNodeTextBoxInputBG.css({'width':'0px', 'height':'0px'});
-      cNodeTextBoxInputBG.css({'width':bWidth, 'height':bHeight});
-
       cNodeTextBox.css({'width':'0px', 'height':'0px'});
+
+      cNodeTextBoxInput.css({'width':bWidth, 'height':bHeight});
+      cNodeTextBoxInputBG.css({'width':bWidth, 'height':bHeight});
       cNodeTextBox.css({'width':bWidth, 'height':bHeight});
 
       cNodeTextBoxInput.css('top', '-' + (cNodeTextBox.height()));
       calc_all_lines(cNode);
+
+      // console.log([bWidth, bHeight]);
     });
   }
 
